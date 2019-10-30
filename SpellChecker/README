@@ -1,0 +1,32 @@
+Design of SpellChecker
+
+*****IDE Usage*****
+Please note that I use IntelliJ IDEA, not eclipse. For some reason, on my IntelliJ, to check the miss spelled
+and the dictionary to use, it only recognized the file if I didn't include the .txt extension at the end of the file.
+I think I might have to install a pluggin of some sort. But if you are running the code on eclipse or any IDEA, just
+be aware that you might have to include the .txt extension or might not. Just try both, just in case.
+
+****To Run The Program****
+Main method is located in SpellCheckerRunner class
+
+***Input Parameters***
+To update the dictionary used: go to SpellChecker -> line20 and line121
+To update the parameters used (n, commonPercent, topN): go to SpellChecker -> line 81
+
+**Design Principles**
+I decided to use a similar format to blackjacksolitaire in the sence to have a userinterface,
+main method class and separate classes for different functionality of the program. The three
+main files are FileHandler, SpellChecker, and WordRecommender. In my WordRecommender class,
+in my getLeftSimilarity and getRightSimilarity methods there is repeated code between them
+that I created a method for the repeated code and used it. But when I would run the tests on
+codio, it was failing both the getSimilarity tests, so I changed it back with the repeated code.
+I am not sure why the tests were failing since my code still worked find once I implemented the
+DRY principle.
+
+One design change would be using the Scanner to request the parameters for WordRecommmender instead
+of the user having to change the parameters in the code itself.
+
+*Bugs In Code*
+There is a bug in my code, for when the user selects 'r' for replace and then selects a number for the
+replacement word. The code displays "Sorry, please enter a valid command" but the code still performs correctly.
+The functionality works and it's not breaking the code but it just displays that message.
